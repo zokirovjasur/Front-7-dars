@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo list</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/output.css" />
+  </head>
+  <body class="flex flex-col h-full">
+    <header class="p-4 bg-purple-800 text-white">
+      <div class="flex justify-between items-center">
+        <h1 class="text-3xl font-bold">My Todo App</h1>
+      </div>
+    </header>
+    <!--! Main Start -->
+    <main class="gradient grow">
+      <div class="flex flex-col mx-auto w-full max-w-96">
+        <form id="todoForm" class="flex flex-col gap-5 py-10">
+          <label class="form-control w-full">
+            <div class="label">
+              <span class="text-2xl label-text">To-Do List 🗒</span>
+            </div>
+            <input
+              name="todoName"
+              type="text"
+              placeholder="Topshiriq nomini yozing..."
+              class="placeholder:opacity-60 input-bordered w-full placeholder:text-base input"
+            />
+            <div class="label"></div>
+          </label>
+          <label class="form-control">
+            <div class="label"></div>
+            <textarea
+              name="todoBody"
+              class="placeholder:opacity-60 textarea-bordered h-24 placeholder:text-xl textarea"
+              placeholder="Topshiriq haqida..."
+            ></textarea>
+          </label>
+          <button
+            class="w-full font-serif text-2xl btn btn-active btn-neutral rounded-lg"
+            type="submit"
+          >
+            Qo'shish
+          </button>
+        </form>
+      </div>
+      <div class="flex flex-col mx-auto w-full max-w-96">
+        <ul class="flex flex-col gap-3" id="todosParent"></ul>
+      </div>
+      <template id="todoTemplate">
+        <li class="shadow-xl w-96 card gradient-task">
+          <div class="card-body">
+            <div class="flex justify-between items-center gap-2">
+              <div class="flex items-center gap-4">
+                <input
+                  id="todoCheckbox"
+                  type="checkbox"
+                  class="border-2 checkbox"
+                />
+                <h2 class="card-title" id="todoTitle"></h2>
+              </div>
+              <div class="flex items-center gap-2">
+                <button class="text-blue-500 btn-accent" id="editTodo">
+                  <i class="fa fa-edit"></i>
+                </button>
+                <button class="text-red-500 btn-accent" id="deleteTodo">
+                  <i class="fa fa-trash"></i>
+                </button>
+              </div>
+            </div>
+            <p id="errorText" class="hidden text-red-500 text-sm"></p>
+            <p class="text-ellipsis truncate overflow-hidden" id="todoBody"></p>
+            <!-- Save -->
+            <button class="hidden mt-2 text-green-500 btn-accent" id="saveTodo">
+              Save
+            </button>
+            <!-- Save -->
+          </div>
+        </li>
+      </template>
+    </main>
+    <!-- Footer Start -->
+    <footer class="p-4 bg-gray-800 text-white mt-auto">
+      <div class="text-center">
+        <p>&copy; 2024 My Todo App. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <script src="js/app.js" type="module"></script>
+  </body>
+</html>

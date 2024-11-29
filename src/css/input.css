@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.gradient {
+  background: linear-gradient(
+    122deg,
+    rgba(139, 11, 218, 0.9) 0%,
+    rgba(0, 0, 0, 0.6195728291316527) 100%
+  );
+}
+
+.gradient-task {
+  background: linear-gradient(
+    36deg,
+    rgba(43, 0, 107, 0.8688725490196079) 0%,
+    rgba(0, 0, 0, 0.6195728291316527) 100%
+  );
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card-title {
+  color: #fff;
+  font-weight: bold;
+}
+.gradient-task {
+  background: linear-gradient(
+    45deg,
+    rgba(63, 81, 181, 0.9) 0%,
+    rgba(3, 155, 229, 0.9) 100%
+  );
+}
+
+#todoBody {
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.btn-active {
+  background: #4caf50;
+  border: none;
+  color: white;
+  transition: transform 0.2s;
+}
+
+.btn-active:hover {
+  transform: scale(1.1);
+}
+
+.card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
